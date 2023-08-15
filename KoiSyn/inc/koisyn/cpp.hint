@@ -1,0 +1,23 @@
+#define LISTENER_PARAMS (\
+    [[maybe_unused]] HQUIC lisn, \
+    [[maybe_unused]] void *ctx, \
+    [[maybe_unused]] QUIC_LISTENER_EVENT *ev)
+
+#define CONNECTION_PARAMS (\
+    [[maybe_unused]] HQUIC conn, \
+    [[maybe_unused]] void *ctx, \
+    [[maybe_unused]] QUIC_CONNECTION_EVENT *ev)
+
+#define STREAM_PARAMS (\
+    [[maybe_unused]] HQUIC strm, \
+    [[maybe_unused]] void *ctx, \
+    [[maybe_unused]] QUIC_STREAM_EVENT *ev)
+
+#define LISTENER_HANDLER(evType) \
+    inline QUIC_STATUS Handle_##evType LISTENER_PARAMS
+
+#define CONNECTION_HANDLER(evType) \
+    inline QUIC_STATUS Handle_##evType CONNECTION_PARAMS
+
+#define STREAM_HANDLER(evType) \
+    inline QUIC_STATUS Handle_##evType STREAM_PARAMS

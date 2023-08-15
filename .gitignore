@@ -1,0 +1,6 @@
+# Visual Studio
+.vs
+x64
+
+# Don't ignore dependency
+!/lib/*
